@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Discovery App - Khám Phá Phim Hay</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- FontAwesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-film logo-icon"></i>
+            <span>Cine<strong class="text-accent">Scope</strong></span>
+        </div>
+        
+        <div class="header-actions">
+            <!-- Tích hợp Link Bài Tập 37, 38, 39 -->
+            <div class="homework-dropdown">
+                <button class="btn-homework"><i class="fa-solid fa-folder-open"></i> Bài tập cũ <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="https://github.com/username/baitap37" target="_blank"><i class="fa-solid fa-link"></i> Bài Tập 37</a>
+                    <a href="https://github.com/username/baitap38" target="_blank"><i class="fa-solid fa-link"></i> Bài Tập 38</a>
+                    <a href="https://github.com/username/baitap39" target="_blank"><i class="fa-solid fa-link"></i> Bài Tập 39</a>
+                </div>
+            </div>
+
+            <!-- Toggle Light / Dark Mode -->
+            <div class="theme-toggle" id="themeToggle" title="Chuyển chế độ Sáng/Tối">
+                <i class="fa-solid fa-sun sun-icon"></i>
+                <i class="fa-solid fa-moon moon-icon"></i>
+                <div class="toggle-ball"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- App Container Main Layout (CSS Grid 2 phần) -->
+    <div class="app-layout">
+        
+        <!-- Sidebar Bên Trái: Bộ Lọc & Tìm Kiếm -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3 class="sidebar-title"><i class="fa-solid fa-magnifying-glass"></i> Tìm kiếm</h3>
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Nhập tên phim..." autocomplete="off">
+                    <i class="fa-solid fa-xmark clear-search" id="clearSearch"></i>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="section-header">
+                    <h3 class="sidebar-title"><i class="fa-solid fa-filter"></i> Thể loại</h3>
+                    <button id="resetFiltersBtn" class="btn-reset">Đặt lại</button>
+                </div>
+                <!-- Danh sách Checkbox Thể Loại được sinh ra bằng JS -->
+                <div class="genre-list" id="genreList">
+                    <!-- Dynamic Dynamic Checkboxes -->
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Bên Phải: Danh Sách Phim -->
+        <main class="main-content">
+            <div class="content-header">
+                <h2>Khám Phá Phim</h2>
+                <div class="result-count">Hiển thị <span id="movieCount">0</span> bộ phim</div>
+            </div>
+
+            <!-- Khai báo danh sách Card Phim -->
+            <div class="movie-grid" id="movieGrid">
+                <!-- Movie Cards sẽ được render bằng JS -->
+            </div>
+
+            <!-- Hiển thị khi không tìm thấy kết quả -->
+            <div class="no-results hidden" id="noResults">
+                <i class="fa-solid fa-film-slash"></i>
+                <h3>Không tìm thấy bộ phim phù hợp</h3>
+                <p>Hãy thử thay đổi từ khóa tìm kiếm hoặc bỏ bớt các bộ lọc thể loại.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal Chi Tiết Phim -->
+    <div class="modal-backdrop hidden" id="movieModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModalBtn">&times;</button>
+            <div class="modal-body" id="modalBody">
+                <!-- Chi tiết phim được đổ từ JS -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
